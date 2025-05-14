@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>SE Wisconsin Road Safety: Kenosha</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- jQuery and Javascript files -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/d3.v7.js"></script>
+    <script src="js/d3.v7.min.js"></script>
+	<script src="js/road.js"></script>
+    <script src="js/map.js"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class = "header"></div>
+    <div class = base_container>
+        <div class = "road" id = "road"></div>
+        <div class = "content_container">
+            <div class = "top_half">
+                <div class = "cover_image_main cover_kenosha">
+                    <div class = "logo logo_kenosha"></div>
+                </div>
+                <div class = "text_grid">
+                    <div>
+                        <p>The Wisconsin Department of Transportation performed an engineering analysis of Highway 32.  They have found patterns of rear-end and angle crashes and discovered vehicles travelling over 80 mph.  The safety hazards deem the road too unsafe in its current state, especially for bicyclists and pedestrians.</p>
+                    </div>
+                    <div class="image_container">
+                        <div class = "image_hwy32"></div>
+                    </div>
+                </div>
+            </div>
+            <div class = "bottom_half">
+                <div class = "text_grid">
+                    <div>
+                        <div class = "label_base label_the_plan"></div>
+                        <p>As of November 18, 2024, the City of Kenosha passed new legislation that reduced the speed limit by 10 mph (from 45 mph to 35 mph).  The targeted section of Highway 32 extends from County KR to Sheridan Road, and high amounts of effort will be made to educate the public on this large change.  These efforts include increased law enforcement presence in the area, dynamic speed signs that display the driver’s current speed relative to the new limit, and temporary electronic signs labeling the reduced speed zone.</p>
+                    </div>
+                    <div>
+                        <div class = "label_base label_interactive_map"></div>
+                        <a target="_blank" class = "map_base map_kenosha" href="https://www.google.com/maps/place/Kenosha,+WI/@42.5890789,-87.9845859,20742m/data=!3m2!1e3!4b1!4m6!3m5!1s0x88055e372255d1e5:0x6d11785b8a32df18!8m2!3d42.5840629!4d-87.8241994!16s%2Fm%2F02h98sm?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "map" id = "map">
+        <div class = "marker" id = "marker"></div>
+        <div class = "map_icon map_icon_MKE"></div>
+        <div class = "map_text map_text_MKE">Milwaukee</div>
+        <div class = "map_icon map_icon_UG"></div>
+        <div class = "map_text map_text_UG">Union Grove</div>
+        <div class = "map_icon map_icon_KSA"></div>
+        <div class = "map_text map_text_KSA">Kenosha</div>
+        <div class = "map_page map_left" id = "left_page">
+            <div class = "map_half_1">
+                <img src = "images/MapHalf1.png"></img>
+            </div>
+            <div class = "map_page back_page"></div>
+        </div>
+        <div class = "map_page map_right" id = "right_page">
+            <div class = "navigation_container">
+                <div class = "close_button" id = "close_button"></div>
+                <br>
+                <div class = "legend"> LEGEND</div>
+                <div class = "location_name">LOCATION</div>
+                <div class = "preview_image"></div>
+                <div class = "location_description"></div>
+                <a class = "go_button"></a>
+                <a href="index.html"class = "return_home_button"></a>
+            </div>
+            <div class = "map_page back_page"></div>
+        </div>
+        <div class = "map_page">
+            <div class = "map_half_2">
+                <img src = "images/MapHalf2.png"></img>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        set_default_location(2);
+        load_dashes();
+        start_car_spawning();
+        load_map();
+    </script>
+
+    <div class = "footer"></div>
+
+</body>
+
+</html>

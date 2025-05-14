@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>SE Wisconsin Road Safety: Union Grove</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- jQuery and Javascript files -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/d3.v7.js"></script>
+    <script src="js/d3.v7.min.js"></script>
+	<script src="js/road.js"></script>
+    <script src="js/map.js"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class = "header"></div>
+    <div class = base_container>
+
+        <div class = "road" id = "road"></div>
+        <div class = "content_container">
+            <div class = "top_half">
+                <div class = "cover_image_main cover_union_grove">
+                    <div class = "logo logo_union_grove"></div>
+                </div>
+                <div class = "text_grid">
+                    <p>Since 2018, Union Grove High School reported a total of 210 vehicular accidents resulting in property damage within the vicinity of the school’s property. 36 of accidents involved a personal injury.  That equates to 30 property damage accidents and ~5 personal injury accidents per year for a single high school! </p>
+                    <div class="image_container">
+                        <div class = "image_hwy45"></div>
+                    </div>
+                </div>
+            </div>
+            <div class = "bottom_half">
+                <div class = "text_grid">
+                    <div>
+                        <div class = "label_base label_referendum"></div>
+                        <p>
+                            The plan for the $34.9 million referendum plans to address traffic congestion and limitations regarding the campus size as well as expanding restrooms and laboratories.  The majority of faculty (93%) and parents (79%) expressed interest in the referendum to address these concerns.  Non-parents still show that they were in favor of the referendum with 57% voting for it and 27% against it. 
+                            <br><br>
+                            After approval through sampling, the referendum was added to Racine County’s ballot for Election Day 2024.  The exact percentages cannot be found, but the referendum has successfully passed.  Hopefully future high school students will have a much safer experience than I had five years ago.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <div class = "label_base label_interactive_map"></div>
+                        <a target="_blank" class = "map_base map_union_grove" href="https://www.google.com/maps/place/Union+Grove+High+School/@42.693074,-88.0534929,1280m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8805707fd634b8d7:0x450e1d31c101c8a1!8m2!3d42.693074!4d-88.050918!16s%2Fg%2F1tfrshd1?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D"></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class = "map" id = "map">
+        <div class = "marker" id = "marker"></div>
+        <div class = "map_icon map_icon_MKE"></div>
+        <div class = "map_text map_text_MKE">Milwaukee</div>
+        <div class = "map_icon map_icon_UG"></div>
+        <div class = "map_text map_text_UG">Union Grove</div>
+        <div class = "map_icon map_icon_KSA"></div>
+        <div class = "map_text map_text_KSA">Kenosha</div>
+        <div class = "map_page map_left" id = "left_page">
+            <div class = "map_half_1">
+                <img src = "images/MapHalf1.png"></img>
+            </div>
+            <div class = "map_page back_page"></div>
+        </div>
+        <div class = "map_page map_right" id = "right_page">
+            <div class = "navigation_container">
+                <div class = "close_button" id = "close_button"></div>
+                <br>
+                <div class = "legend"> LEGEND</div>
+                <div class = "location_name">LOCATION</div>
+                <div class = "preview_image"></div>
+                <div class = "location_description"></div>
+                <a class = "go_button"></a>
+                <a href="index.html"class = "return_home_button"></a>
+            </div>
+            <div class = "map_page back_page"></div>
+        </div>
+        <div class = "map_page">
+            <div class = "map_half_2">
+                <img src = "images/MapHalf2.png"></img>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        set_default_location(1);
+        load_dashes();
+        start_car_spawning();
+        load_map();
+    </script>
+
+    <div class = "footer"></div>
+
+</body>
+
+</html>

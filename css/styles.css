@@ -1,0 +1,740 @@
+html {
+  box-sizing:border-box;
+}
+
+*, *:before, *:after {
+  box-sizing:inherit;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-color: #CDC7E5;
+  overflow-x: hidden;
+  font-family: 'Overpass';
+  line-height: 32px;
+}
+
+a:link {
+  color: #CDC7E5;
+}
+
+a:visited {
+  color: gray;
+}
+
+a:hover {
+  color: #F7B500;
+}
+
+a:active {
+  color: white;
+}
+
+/********* CONTENT *************/
+
+.base_container {
+  height: auto;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+
+.content_container {
+  margin-bottom: 0;
+}
+
+.top_half {
+  margin: 5%;
+  margin-top: 0%;
+  margin-bottom: 5%;
+}
+
+.bottom_half {
+  color: white;
+  margin: 0%;
+  background-color: #494747;
+  padding: 5%;
+  padding-bottom: 20%;
+}
+
+.cover_image_main {
+  background-image: url("../images/cover_image_landing.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 1130/636;
+  width: 100%;
+}
+
+.cover_kenosha {
+  background-image: url("../images/cover_image_kenosha.png");
+}
+
+.cover_union_grove {
+  background-image: url("../images/cover_image_union_grove.png");
+}
+
+.cover_milwaukee {
+  background-image: url("../images/cover_image_milwaukee.png");
+}
+
+.logo {
+  position: relative;
+  width: 35%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 347/224;
+  
+}
+
+.logo_kenosha {
+  background-image: url("../images/sign_kenosha.png");
+  aspect-ratio: 416/148;
+}
+
+.logo_union_grove {
+  background-image: url("../images/sign_union_grove.png");
+  aspect-ratio: 551/158;
+}
+
+.logo_milwaukee {
+  background-image: url("../images/sign_milwaukee.png");
+  aspect-ratio: 479/142;
+}
+
+.text_grid {
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  column-gap: 10%;
+  font-size: 21px;
+  line-height: 42px;
+}
+
+.mke_grid {
+  grid-template-columns: 35% 35%;
+  column-gap: 15%;
+}
+
+.D3_container {
+  width: 100%;
+  aspect-ratio: 1.5;
+  height: 550px;
+}
+
+.label_base {
+  position: relative;
+  height: 96px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 10%;
+}
+
+.label_interactive_map {
+  background-image: url("../images/header_interactive_map.png");
+  width: 311px;
+}
+
+.label_referendum {
+  background-image: url("../images/header_referendum.png");
+  width: 322px;
+}
+
+.label_references {
+  background-image: url("../images/header_references.png");
+  width: 243px;
+  top: 105px;
+  left: -20px
+}
+
+.label_the_plan {
+  background-image: url("../images/header_the_plan.png");
+  width: 193px;
+}
+
+.label_act1 {
+  background-image: url("../images/header_wi_act1.png");
+  width: 394px;
+}
+
+.label_act9 {
+  background-image: url("../images/header_wi_act9.png");
+  width: 394px;
+}
+
+.label_act10 {
+  background-image: url("../images/header_wi_act10.png");
+  width: 405px;
+}
+
+.map_base {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  width: 100%;
+}
+
+.map_union_grove {
+  background-image: url("../images/map_union_grove.png");
+  aspect-ratio: 572/678;
+}
+
+.map_milwaukee {
+  background-image: url("../images/map_milwaukee.png");
+  aspect-ratio: 480/624;
+}
+
+.map_kenosha {
+  background-image: url("../images/map_kenosha.png");
+  aspect-ratio: 570/486;
+}
+
+.image_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_hwy45 {
+  transform: translate(-20%, 0%);
+  top: 50%;
+  left: 65%;
+  width: 60%;
+  aspect-ratio: 1;
+  background-size: cover;
+  background-image: url("../images/image_hwy45.png");
+}
+
+.image_hwy32 {
+  transform: translate(-20%, 0%);
+  top: 50%;
+  left: 65%;
+  width: 60%;
+  aspect-ratio: 1;
+  background-size: cover;
+  background-image: url("../images/image_hwy32.png");
+}
+
+.image_milwaukee {
+  width: 100%;
+  aspect-ratio: 548/367;
+  background-size: cover;
+  background-image: url("../images/image_mke.png");
+}
+
+.image_welcome {
+  width: 150%;
+  aspect-ratio: 680/454;
+  background-size: cover;
+  background-image: url("../images/image_welcome.png");
+}
+
+.image_road {
+  width: 150%;
+  aspect-ratio: 760/533;
+  background-size: cover;
+  background-image: url("../images/image_road.png");
+}
+
+/********* ROAD ***********/
+
+.road {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #525257;
+  border-left: 45px #768948 solid;
+  border-right: 45px #768948 solid;
+  overflow: clip;
+}
+
+.line_dash {
+  /* Overidden in road.js*/
+  margin-bottom: 10px;
+  height: 10px;
+  display: block;
+  width: 50%;
+  border-right: 2px #F7B500 solid;
+}
+
+.car {
+  transform: translate(-50%, -50%);
+  background-image: url("../images/car_white.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20%;
+  aspect-ratio: 36/79;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.truck {
+  transform: translate(-50%, -50%);
+  background-image: url("../images/truck_white.png");
+  width: 20%;
+  aspect-ratio: 36/90;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.start_top {
+  rotate: 180deg;
+  left: 5%;
+  top: -100%;
+  animation: top_to_bottom 5s linear;
+}
+
+.start_bottom {
+  left: 75%;
+  top: 100%;
+  animation: bottom_to_top 5s linear;
+}
+
+@keyframes top_to_bottom {
+  0% {top: -10%}
+  100% {top: 100%}
+}
+
+@keyframes bottom_to_top {
+  0% {top: 100%}
+  100% {top: -10%}
+}
+
+/********* HEADER/FOOTER ***********/
+
+.header {
+  background-image: url("../images/Header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  position: absolute;
+  aspect-ratio: 1436/134;
+  z-index: 9;
+}
+
+.footer {
+  background-image: url("../images/Footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  position: absolute; 
+  transform: translate(0, -100%);
+  aspect-ratio: 1442/172;
+  z-index: 9;
+}
+
+
+/********* CHART ***********/
+
+.button_base {
+  padding: 10px;
+  background-color: black;
+  aspect-ratio: 8;
+  width: 90%;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border-radius: 20px;
+}
+
+.button_yellow {
+
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+}
+
+.button_light_base {
+
+  border: none;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
+  border-radius: 100%;
+  width: 80%;
+  height: 80%;
+  transform: translate(12.5%, 12.5%);
+  transition: 0.25s;
+
+}
+
+.button_light_narrow {
+  background-size: 37.5%;
+}
+
+.button_light_narrow_2 {
+  background-size: 22.5%;
+}
+
+.button_light_narrow_3 {
+  background-size: 50%;
+}
+
+.button_light_narrow_4 {
+  background-size: 50%;
+  background-position: 60% 50%;
+}
+
+.button_light_narrow_5 {
+  background-position: 70% 37.5%;
+}
+
+.button_light_narrow_6 {
+  background-size: 50%;
+  background-position: 45% 50%;
+}
+
+.button_light_base:hover {
+
+  transition: 0.25s;
+  background-size: 85%;
+
+}
+
+.button_light_narrow:hover {
+  background-size: 45%;
+}
+
+.button_light_narrow_2:hover {
+  background-size: 27.5%;
+}
+
+.button_light_narrow_3:hover {
+  background-size: 60%;
+}
+
+.button_light_narrow_4:hover {
+  background-size: 60%;
+}
+
+.button_light_narrow_5:hover {
+  background-size: 85%;
+  background-position: 90% 37.5%;
+}
+
+.button_light_narrow_6:hover {
+  background-size: 55%;
+}
+
+.chart_title {
+  font-weight: 700;
+  margin-top: 30px;
+  width: 90%;
+  text-align: center;
+  font-size: 40px;
+}
+
+.chart_subtitle {
+  width: 90%;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+/********* MAP ***********/
+
+.map {
+  position: fixed;
+  top: 80%;
+  left: 90%;
+  width: 68px;
+  aspect-ratio: 68 / 109 auto;
+  z-index: 10;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+.big_map {
+  transform: translate(-50%, -50%);
+  margin: -35%;
+  margin-left: -52.5%;
+  width: 25%;
+  cursor: default;
+}
+
+.marker {
+  position: absolute;
+  width: 33px;
+  height: 66px;
+  background-image: url("../images/Marker.png");
+  transform: translate(-50%, 0);
+  left: 50%;
+  top: -44px;
+  z-index: 1000;
+  animation: map_idle 2s 1s ease-in-out infinite;
+  transition: all 1s ease;
+}
+
+.map_page {
+  padding: 5%;
+  padding-left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #F7E4D8;
+  z-index: 1;
+  border: #a09663 1px solid;
+}
+
+.back_page {
+  top: 0%;
+  backface-visibility: hidden;
+}
+
+.map_left {
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.map_right {
+  transform-origin: right;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  transition-delay: 0.15s;
+  z-index: 3;
+}
+
+.hover_left_page {
+  transform: rotateY(-135deg);
+  transition-delay: 0.15s;
+}
+
+.open_left_page {
+  transform: rotateY(-180deg);
+  transition-delay: 0.15s;
+}
+
+.hover_right_page {
+  transform: rotateY(135deg);
+  transition-delay: 0s;
+}
+
+.open_right_page {
+  transform: rotateY(180deg);
+  transition-delay: 0.15s;
+}
+
+.hover_map {
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+}
+
+@keyframes map_idle {
+  0% {top: -44px;}
+  50% {top: -66px;}
+  100% {top: -44px;}
+}
+
+/********* MAP DESIGN ***********/
+
+.map_half_1 {
+  transform: rotateY(180deg);
+}
+
+.map_icon {
+  position: absolute;
+  aspect-ratio: 1;
+  width: 7.5%;
+  background-color: red;
+  border-radius: 100%;
+  transition: 0.25s;
+  z-index: 100;
+  transition: 0.2s;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.pulse {
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  opacity: 1;
+  animation: pulse 1s infinite;
+  border-radius: 100%;
+  z-index: 100;
+  transition: 0.2s;
+}
+
+@keyframes pulse {
+  0% {height: 0; width: 0; opacity: 1;}
+  100% {height: 250%; width: 250%; opacity: 0;}
+}
+
+.map_text {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  z-index: 20;
+  opacity: 0;
+}
+
+.map_text_MKE {
+  left: -6%;
+  top: 4.5%;
+}
+
+.map_text_KSA {
+  left: 10%;
+  top: 79.5%;
+}
+
+.map_text_UG {
+  left: -75%;
+  top: 64.5%;
+}
+
+.map_icon_MKE {
+  left: -15%;
+  top: 5%;
+}
+
+.map_icon_KSA {
+  left: 1%;
+  top: 80%;
+}
+
+.map_icon_UG {
+  left: -44%;
+  top: 65%;
+}
+
+.navigation_container {
+  margin-left: 10px;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.close_button {
+  background-image: url("../images/x_button_non_hover.png");
+  position: absolute;
+  width: 10%;
+  aspect-ratio: 1;
+  left: 88%;
+  z-index: 3;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.close_button:hover {
+  background-image: url("../images/x_button_hover.png");
+  transition: 0.2s;
+}
+
+.legend {
+  position: absolute;
+  transform: translate(-50%, 0);
+  left: 52.5%;
+  top: 7.5%;
+  font-family: 'Overlock';
+  color: #C21F1F;
+  font-size: 36px;
+  letter-spacing: 10px;
+}
+
+.location_name {
+  position: absolute;
+  transform: translate(-50%, 0);
+  width: 100%;
+  left: 50%;
+  text-align: center;
+  top: 17.5%;
+  font-weight: bolder;
+  font-size: 24px;
+  color: #494747;
+}
+
+.preview_image {
+  position: absolute;
+  aspect-ratio: 361 / 128;
+  transform: translate(-50%, 0);
+  left: 50%;
+  top: 25%;
+  width: 80%;
+  background-size: cover;
+  background-color: grey;
+  background-image: none;
+  transition: 0.2s;
+}
+
+.location_description {
+  width: 90%;
+  position: absolute;
+  transform: translate(-50%, 0);
+  left: 50%;
+  top: 45%;
+  font-weight: bold;
+  font-size: 16px;
+  color: #494747;
+}
+
+.go_button {
+  width: 25%;
+  height: 10%;
+  transform: translate(-50%, 0);
+  left: 50%;
+  top: 75%;
+  background-image: url("../images/go_button.png");
+  position: absolute;
+  z-index: 3;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.go_button:hover {
+  background-image: url("../images/go_button_hover.png");
+  transition: 0.2s;
+}
+
+.return_home_button {
+  width: 50%;
+  height: 11%;
+  transform: translate(-50%, 0);
+  left: 50%;
+  top: 85%;
+  background-image: url("../images/return_home_button.png");
+  position: absolute;
+  z-index: 3;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.return_home_button:hover {
+  background-image: url("../images/return_home_button_hover.png");
+  transition: 0.2s;
+}

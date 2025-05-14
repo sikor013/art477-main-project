@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>SE Wisconsin Road Safety: Milwaukee</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- jQuery and Javascript files -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/d3.v7.js"></script>
+    <script src="js/d3.v7.min.js"></script>
+	<script src="js/road.js"></script>
+    <script src="js/map.js"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class = "header"></div>
+    <div class = base_container>
+
+        <div class = "road" id = "road"></div>
+        <div class = "content_container">
+            <div class = "top_half">
+                <div class = "cover_image_main cover_milwaukee">
+                    <div class = "logo logo_milwaukee"></div>
+                </div>
+                <div class = "text_grid">
+                    <p>Since 2014, Milwaukee County has experienced stagnation of accidents with injuries which averaging ~400 per year.  Despite this, there number of fatal crashes has doubled.  To combat the persistence of reckless driving, the county has received $2 million in state and federal funds to address these issues. These funds will be used for multimodal safety and targeting problematic intersections .  In 2023, new legislation was passed to curb to discourage reckless driving behavior.</p>
+                    <div class = "image_container">
+                        <div class = "image_milwaukee"></div>
+                    </div>
+                </div>
+            </div>
+            <div class = "bottom_half">
+                <div class = "text_grid mke_grid">
+                    <div>
+                        <div class = "label_base label_act1"></div>
+                        <p>The Milwaukee County police can impound a vehicle stopped in violation of reckless driving laws if the driver has unpaid fines from previous reckless driving violations.  If the owner fails to pay the fines or storage fees, the city can destroy or sell the vehicle.  The objective is to provide fair punishment without over-criminalizing young drivers.  There are a few flaws addressed.  For example, there is a decent number of reckless drivers who do not own the vehicle they are driving. </p>
+                    </div>
+                    <div>
+                        <div class = "label_base label_act9"></div>
+                        <p>The punishments for reckless driving have heavily increased.  All fines regarding it have doubled.  For example, first offense fines ranged between $25 and $200 to between $50 and $400.  Causing great bodily harm while reckless driving is now classified as a Class H felony instead of Class I.  Punishments for a Class H felony include fines up to $10,000, up to 6 years of jail, or both. </p>
+                    </div>
+                </div>
+                <div class = "text_grid mke_grid">
+                    <div>
+                        <div class = "label_base label_act10"></div>
+                        <p>This act provides clearer definitions for carjacking, now making it a named offense.  This act revises previous laws addressing operating a vehicle without the owner’s consent.  Carjacking is bumped up from Class C to a Class B felony, punishable by up to 60 years in prison.  An additional law was added to assign a Class A misdemeanor to all passengers who voluntarily ride in a vehicle that they know is taken without the consent of the owner. </p>
+                    </div>
+                    <div>
+                        <div class = "label_base label_interactive_map"></div>
+                        <a target="_blank" class = "map_base map_milwaukee" href="https://www.google.com/maps/place/Milwaukee,+WI/@43.0576793,-88.1322166,41171m/data=!3m2!1e3!4b1!4m6!3m5!1s0x880502d7578b47e7:0x445f1922b5417b84!8m2!3d43.0410344!4d-87.9096783!16zL20vMGR5bDk?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class = "map" id = "map">
+        <div class = "marker" id = "marker"></div>
+        <div class = "map_icon map_icon_MKE"></div>
+        <div class = "map_text map_text_MKE">Milwaukee</div>
+        <div class = "map_icon map_icon_UG"></div>
+        <div class = "map_text map_text_UG">Union Grove</div>
+        <div class = "map_icon map_icon_KSA"></div>
+        <div class = "map_text map_text_KSA">Kenosha</div>
+        <div class = "map_page map_left" id = "left_page">
+            <div class = "map_half_1">
+                <img src = "images/MapHalf1.png"></img>
+            </div>
+            <div class = "map_page back_page"></div>
+        </div>
+        <div class = "map_page map_right" id = "right_page">
+            <div class = "navigation_container">
+                <div class = "close_button" id = "close_button"></div>
+                <br>
+                <div class = "legend"> LEGEND</div>
+                <div class = "location_name">LOCATION</div>
+                <div class = "preview_image"></div>
+                <div class = "location_description"></div>
+                <a class = "go_button"></a>
+                <a href="index.html"class = "return_home_button"></a>
+            </div>
+            <div class = "map_page back_page"></div>
+        </div>
+        <div class = "map_page">
+            <div class = "map_half_2">
+                <img src = "images/MapHalf2.png"></img>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        set_default_location(0);
+        load_dashes();
+        start_car_spawning();
+        load_map();
+    </script>
+
+    <div class = "footer"></div>
+
+</body>
+
+</html>

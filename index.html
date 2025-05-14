@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>SE Wisconsin Road Safety</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- jQuery and Javascript files -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/d3.v7.js"></script>
+    <script src="js/d3.v7.min.js"></script>
+	<script src="js/road.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/chart.js"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class = "header"></div>
+    <div class = base_container>
+
+        <div class = "road" id = "road"></div>
+        <div class = "content_container">
+            <div class = "top_half">
+                <div class = "cover_image_main">
+                    <div class = "logo"></div>
+                </div>
+                <div class = "text_grid">
+                    <p>
+                        I am Josh, resident of South Eastern Wisconsin.  I've had my fair share of near misses and stressful scenarios as a pedestrian and driver, and I dedicated this project to explain how safety of driving in this area is struggling and what local governments have done in the past and will do for the future.
+                        <br><br>
+                        Driving is the way to live your life throughout the country.  You drive to get groceries, drive to school, drive to work, drive to the doctor, and drive to do anything, really.  You drive to live.
+                        <br><br>
+                        During my high school years, that I’ve walked along a sidewalk to reach the school’s parking lot.  Unfortunately, there is only one way in and out of the parking lot, which is of course intersects the sidewalk.  Cars bolt to and from the parking lot directly into a rather busy Highway 45.  There were no crossing guards, just a dinky stop sign that impatient students see as visual noise.  There were two instances where I was inches away from an unaware driver when walking on that damn sidewalk.  One of which if I was a second ahead, my foot would have been run over!  Thankfully, I had the luck to remain unscathed, but not everyone is as lucky.
+                        <br><br>
+                        I was not the only one to express concerns about the lack of safety and regulations regarding driving.  Over the past five years, local governments throughout southeastern Wisconsin have made big strides to help address pedestrian safety.
+                        <br><br>
+                        This is not to discourage the use of cars.  Living here would be impossible and impractical if personal vehicles magically disappeared.  The best we can do is spread awareness and continue to pass stronger traffic laws to reduce the risk of accidents.
+                    </p>
+                    <div>
+                        <div class = "image_welcome"></div>
+                        <div class = "image_road"></div>
+                    </div>
+                </div>
+            </div>
+            <div class = "bottom_half">
+                <div class = "D3_container" id = "D3_container">
+                    <div class = "button_base">
+                        <div class = "button_yellow">
+                            <button id="Fatal" class = "button_light_base button_light_narrow_3" onclick="update(total_fatal_crashes, 'Fatal')" title='Fatal Crashes'></button>
+                        </div>
+                        <div class = "button_yellow">
+                            <button id="Alcohol-Related" class = "button_light_base button_light_narrow_2" onclick="update(alcohol_related_crashes, 'Alcohol-Related')" title='Alcohol-Related Crashes'></button>
+                        </div>
+                        <div class = "button_yellow">
+                            <button id="Drug-Related" class = "button_light_base button_light_narrow_4" onclick="update(drug_related_crashes, 'Drug-Related')" title='Drug-Related Crashes'></button>
+                        </div>
+                        <div class = "button_yellow">
+                            <button id="Speeding-Related" class = "button_light_base button_light_narrow_5" onclick="update(speeding_related_crashes, 'Speeding-Related')" title='Speeding-Related Crashes'></button>
+                        </div>
+                        <div class = "button_yellow">
+                            <button  id="Hit-and-Run" class = "button_light_base button_light_narrow_6" onclick="update(hit_and_run_related_crashes, 'Hit-and-Run')" title='Hit-and-Run Crashes'></button>
+                        </div>
+                        <div class = "button_yellow">
+                            <button id="Motorcycle" class = "button_light_base" onclick="update(motorcycle_crashes, 'Motorcycle')" title='Motorcycle Crashes'></button>
+                        </div>
+                        <div class = "button_yellow">
+                            <button id="Pedestrian" class = "button_light_base button_light_narrow" onclick="update(pedestrian_crashes, 'Pedestrian')" title='Pedestrian Crashes'></button>
+                        </div>
+                        <div class = "button_yellow">
+                            <button id="Bicycle" class = "button_light_base" onclick="update(bicycle_crashes, 'Bicycle')" title='Bicycle Crashes'></button>
+                        </div>
+                    </div>
+                    <div class="chart_title">Wisconsin Crash Statistics</div>
+                    <div class="chart_subtitle" id="chart_subtitle">Fatal Crashes</div>
+                    <div id="my_dataviz"></div>
+                </div>
+                <br>
+                <br>
+                <div class = "label_base label_references"></div>
+                <ul>
+                    <li>
+                        <a target = "_blank" href = "https://wisconsindot.gov/Pages/about-wisdot/newsroom/statistics/final.aspx">Wisconsin Department of Transportation</a>
+                    </li>
+                    <li>
+                        <a target = "_blank" href = "https://www.ug.k12.wi.us/o/ughs/page/referendum-2024">Union Grove High School Page</a>
+                    </li>
+                    <li>
+                        <a target = "_blank" href = "https://www.ug.k12.wi.us/article/1684555">Union Grove High School Community Survey</a>
+                    </li>
+                    <li>
+                        <a target = "_blank" href = "https://drive.google.com/file/d/1zhCMr6HAOvuV-n2P2O4YXxTNXEdYVTEK/view?pli=1">Union Grove High School Presentation</a>
+                    </li>
+                    <li>
+                        <a target = "_blank" href = "https://www.kenosha.org/Document%20Center/Newslist/WIS%2032%20Speed%20Reduction%20.docx.pdf">City of Kenosha</a>
+                    </li>
+                    <li>
+                        <a target = "_blank" href = "https://county.milwaukee.gov/EN/County-Executive/News/Press-Releases/County-Executive-David-Crowley-Approves-Legislation-Combatting-Reckless-Driving-and-Fatal-Crashes">Milwaukee County Government</a>
+                    </li>
+                    <li>
+                        <a target = "_blank" href = "https://county.milwaukee.gov/files/county/transportation-services/Complete-Communities/Milwaukee-County-DOTs-Transportation-Safety-Assessment-Report-FINAL---February-2024.pdf">Milwaukee County Department of Transportation</a>
+                    </li>
+                    <li>
+                        <a target = "_blank" href = "https://milwaukee-criminal-lawyer.com/reckless-driving-in-milwaukee-what-are-lawmakers-doing-to-address-the-situation/">Milwaukee Criminal Lawyer</a>
+                    </li>
+                </ul>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class = "map" id = "map">
+        <div class = "marker" id = "marker"></div>
+        <div class = "map_icon map_icon_MKE"></div>
+        <div class = "map_text map_text_MKE">Milwaukee</div>
+        <div class = "map_icon map_icon_UG"></div>
+        <div class = "map_text map_text_UG">Union Grove</div>
+        <div class = "map_icon map_icon_KSA"></div>
+        <div class = "map_text map_text_KSA">Kenosha</div>
+        <div class = "map_page map_left" id = "left_page">
+            <div class = "map_half_1">
+                <img src = "images/MapHalf1.png"></img>
+            </div>
+            <div class = "map_page back_page"></div>
+        </div>
+        <div class = "map_page map_right" id = "right_page">
+            <div class = "navigation_container">
+                <div class = "close_button" id = "close_button"></div>
+                <br>
+                <div class = "legend"> LEGEND</div>
+                <div class = "location_name">LOCATION</div>
+                <div class = "preview_image"></div>
+                <div class = "location_description"></div>
+                <a class = "go_button"></a>
+                <a href="index.html"class = "return_home_button"></a>
+            </div>
+            <div class = "map_page back_page"></div>
+        </div>
+        <div class = "map_page">
+            <div class = "map_half_2">
+                <img src = "images/MapHalf2.png"></img>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        load_dashes();
+        start_car_spawning();
+        load_map();
+    </script>
+
+    <div class = "footer"></div>
+
+</body>
+
+</html>
